@@ -1,5 +1,5 @@
-$base-backdrop-z-index: 1049;
-$base-modal-z-index: 1050;
+$base-backdrop-z-index: 1050;
+$base-modal-z-index: $base-backdrop-z-index;
 $icon-size: (4em / 3);
 
 // This generate classes layer-1, layer-2, ..., layer-10.
