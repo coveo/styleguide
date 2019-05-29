@@ -76,7 +76,8 @@
         "tabWidth": 4,
         "singleQuote": true,
         "trailingComma": "es5",
-        "bracketSpacing": false
+        "bracketSpacing": false,
+        "arrowParens": "always"
     },
     "husky": {
         "hooks": {

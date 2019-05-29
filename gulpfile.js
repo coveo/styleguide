@@ -51,8 +51,8 @@ gulp.task('lib', () => {
         './node_modules/materialize-css/js/collapsible.js',
         './lib/js/*',
     ];
-    dependencies.forEach(path => {
-        fs.exists(path, exists => {
+    dependencies.forEach((path) => {
+        fs.exists(path, (exists) => {
             if (!exists) {
                 if (path.indexOf('*') === -1) {
                     log(colors.red('File not found: ', path));
@@ -72,12 +72,12 @@ gulp.task('lib', () => {
         .pipe(gulpif(useMinifiedSources, gulp.dest('./dist/js')));
 });
 
-gulp.task('clean', done => {
+gulp.task('clean', (done) => {
     const filesToDelete = ['./dist', './docs/dist', './_gh_pages', './.sass-cache', './tmp'];
     if (cleanAll) {
         filesToDelete.concat(['**/*.orig', '**/*.rej', 'node_modules', 'package-lock.json']);
     }
-    return del(filesToDelete).then(deletedFiles => {
+    return del(filesToDelete).then((deletedFiles) => {
         log(colors.green('Files deleted:', deletedFiles.join(', ')));
         done();
     });
@@ -95,7 +95,7 @@ gulp.task('copy:js', () => {
     return gulp.src('./resources/js/**/*').pipe(gulp.dest('./dist/js/'));
 });
 
-gulp.task('palette', done => {
+gulp.task('palette', (done) => {
     const paletteMap = fs
         .readFileSync('./scss/common/palette.scss', 'utf8')
         .match(/\$.+(?=:)/g)
@@ -133,14 +133,14 @@ gulp.task('sprites', () => {
 
 function Dictionary(from) {
     this.json = JSON.parse(fs.readFileSync(from));
-    this.merge = dict => {
+    this.merge = (dict) => {
         this.json = _.extend(this.json, dict.json);
     };
 
-    this.writeSvgEnumFile = to => {
+    this.writeSvgEnumFile = (to) => {
         let code = 'var svgEnum = {\n';
         const that = this;
-        _.each(_.keys(this.json), key => {
+        _.each(_.keys(this.json), (key) => {
             const camelizedKey = s.camelize(key);
             const svgString = JSON.stringify(that.json[key]);
             code +=
@@ -159,7 +159,7 @@ function Dictionary(from) {
         fs.writeFileSync(to, code);
     };
 
-    this.writeVaporSvgVersionFile = to => {
+    this.writeVaporSvgVersionFile = (to) => {
         const code = 'VaporSVG.version = ' + JSON.stringify(require('./package.json').version) + ';';
         fs.writeFileSync(to, code);
     };
@@ -191,7 +191,7 @@ gulp.task('svg:concat', () => {
             })
         )
         .pipe(
-            cheerio($ => {
+            cheerio(($) => {
                 // tslint:disable-next-line
                 $('svg').each(function() {
                     const svg = $(this);
@@ -238,12 +238,12 @@ gulp.task('svg', gulp.series('svg:enum'));
 
 gulp.task(
     'sass',
-    gulp.series('palette', 'sprites', done => {
+    gulp.series('palette', 'sprites', (done) => {
         return gulp
             .src('./scss/guide.scss')
             .pipe(sourcemaps.init())
             .pipe(
-                sass().on('error', err => {
+                sass().on('error', (err) => {
                     sassError(err, done);
                 })
             )
