@@ -20,7 +20,6 @@ cache:
         - vendor/bundle
 
 script:
-    - npm run-script lint
     - npm run-script build
     - npm run-script buildpages
 
