@@ -1,0 +1,5094 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Form layouts</title>
+    <meta name="description"
+          content="Vapor CSS is a collection of UI components used in Coveo's Administration Console. It is widely inspired by Bootstrap 3.0 and borrows some of its components. The project is at its early stages, some components can still have lots of breaking changes.">
+
+    <link rel="stylesheet" href="/vapor/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,700,300">
+
+    <link rel="stylesheet" href="/vapor/dist/css/CoveoStyleGuide.css">
+
+    <link rel="canonical" href="http://coveo.github.io/vapor//vapor/forms/">
+
+    <link rel="shortcut icon" type="image/png" href="/vapor/dist/images/favicon.ico">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
+
+    <script src="http://jsbeautifier.org/js/lib/beautify.js"></script>
+    <script src="http://jsbeautifier.org/js/lib/beautify-css.js"></script>
+    <script src="http://jsbeautifier.org/js/lib/beautify-html.js"></script>
+
+    <script src="/vapor/dist/js/CoveoStyleGuide.Dependencies.js"></script>
+    <script src="/vapor/dist/js/scripts.js"></script>
+    <script src="/vapor/dist/js/edit-codepen.js"></script>
+    <script src="/vapor/dist/js/autosize.js"></script>
+</head>
+
+
+<body class="coveo-styleguide">
+
+<header class="header bg-gradient flex flex-row flex-center">
+    <button class="header-hamburger header-hamburger-opened" type="button">
+        <svg class="icon mod-2x fill-pure-white" viewBox="0 0 20 20" xml:space="preserve">
+            <g>
+                <path d="M1,2.8h18c0.6,0,1,0.4,1,1v0.5c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1V3.8C0,3.2,0.4,2.8,1,2.8z"/>
+                <path id="Rectangle-2_1_" d="M1,8.8h18c0.6,0,1,0.4,1,1v0.5c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1V9.8C0,9.2,0.4,8.8,1,8.8z" class="st0"/>
+                <path d="M1,14.8h18c0.6,0,1,0.4,1,1v0.5c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1v-0.5C0,15.2,0.4,14.8,1,14.8z"/>
+            </g>
+        </svg>
+    </button>
+    <div class="header-section flex mod-no-border" height="">
+        <a href="http://coveo.com" target="_blank">
+            <div>
+                <svg width="90px" height="28px" viewBox="0 0 100 37" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Coveo Logo -->
+                    <g id="Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                        <g id="Menu---Etape-2" sketch:type="MSArtboardGroup" transform="translate(-15.000000, -12.000000)">
+                            <g id="Menu-All" sketch:type="MSLayerGroup">
+                                <g id="logo" transform="translate(15.000000, 12.000000)" sketch:type="MSShapeGroup">
+                                    <path d="M90.9596429,18.5769307 C85.99,18.5769307 82.0825,22.5095545 82.0825,27.6503564 C82.0825,32.787495 85.99,36.7219505 90.9596429,36.7219505 C95.9353571,36.7219505 99.8421429,32.7937228 99.8421429,27.6503564 C99.8421429,22.5095545 95.935,18.5769307 90.9596429,18.5769307 L90.9596429,18.5769307 Z M90.9596429,33.5886733 C87.7992857,33.5886733 85.2764286,30.8605644 85.2764286,27.6503564 C85.2764286,24.4027822 87.7992857,21.7094752 90.9596429,21.7094752 C94.1253571,21.7094752 96.6435714,24.4027822 96.6435714,27.6503564 C96.6435714,30.860198 94.1253571,33.5886733 90.9596429,33.5886733 L90.9596429,33.5886733 Z"
+                                        id="Shape" fill="#FFFFFF"></path>
+                                    <path d="M69.5082143,18.578396 C64.1439286,18.578396 61.4107143,22.5095545 61.4107143,27.7562277 C61.4107143,32.7856634 64.4967857,36.7219505 69.5782143,36.7219505 C72.8110714,36.7219505 75.7196429,35.0082277 77.2860714,32.0570198 L74.5864286,30.4883663 C73.3789286,32.5303267 72.0642857,33.8070099 69.6114286,33.8070099 C66.5575,33.8070099 64.6335714,31.078901 64.605,28.155901 L77.2907143,28.1584653 L77.2907143,27.6507228 C77.2910714,22.5861188 74.8017857,18.578396 69.5082143,18.578396 L69.5082143,18.578396 Z M64.7739286,25.6820297 C65.1707143,23.2319703 67.0192857,21.4215347 69.5028571,21.4215347 C72.0646429,21.4215347 73.6996429,23.1286634 74.0864286,25.6820297 L64.7739286,25.6820297 L64.7739286,25.6820297 Z"
+                                        id="Shape" fill="#FFFFFF"></path>
+                                    <path d="M49.0107143,29.7241881 L44.2503571,19.0868713 L40.6646429,19.0868713 L49.0107143,36.7215842 L57.3928571,19.0806436 L53.8046429,19.0806436 L49.0107143,29.7241881 Z"
+                                        id="Shape" fill="#FFFFFF"></path>
+                                    <path d="M27.9817857,18.5769307 C23.0089286,18.5769307 19.1046429,22.5095545 19.1046429,27.6503564 C19.1046429,32.787495 23.0092857,36.7219505 27.9817857,36.7219505 C32.9542857,36.7219505 36.8642857,32.7937228 36.8642857,27.6503564 C36.8642857,22.5095545 32.9517857,18.5769307 27.9817857,18.5769307 L27.9817857,18.5769307 Z M27.9817857,33.5886733 C24.8210714,33.5886733 22.2960714,30.8605644 22.2960714,27.6503564 C22.2960714,24.4027822 24.8210714,21.7094752 27.9817857,21.7094752 C31.1446429,21.7094752 33.6625,24.4027822 33.6625,27.6503564 C33.6625,30.860198 31.145,33.5886733 27.9817857,33.5886733 L27.9817857,33.5886733 Z"
+                                        id="Shape" fill="#FFFFFF"></path>
+                                    <path d="M0.0975,27.7587921 C0.0975,32.8651584 4.11107143,36.7237822 9.01357143,36.7237822 C10.6832143,36.7237822 12.1410714,36.3937129 13.5953571,35.590703 L13.5953571,31.4045743 C12.3896429,32.7823663 10.8964286,33.6571782 9.05035714,33.6571782 C5.67428571,33.6571782 3.29642857,31.1089406 3.29642857,27.6093267 C3.29642857,24.4742178 5.71071429,21.6387723 8.835,21.6387723 C10.7539286,21.6387723 12.3171429,22.4370198 13.5953571,23.9291089 L13.5953571,19.7089109 C12.3171429,18.942901 10.6810714,18.578396 9.19285714,18.578396 C4.07428571,18.578396 0.0975,22.4802475 0.0975,27.7587921 L0.0975,27.7587921 Z"
+                                        id="Shape" fill="#FFFFFF"></path>
+                                    <path d="M76.2207143,8.2949604 L62.4332143,0.0432277228 L62.4332143,16.3107723 L76.2207143,8.2949604 L76.2207143,8.2949604 Z"
+                                        id="Triangle" fill="#F58025"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </a>
+    </div>
+
+    <div class="header-section flex flex-center">
+        <p class="h2 mt1">
+            <span class="text-medium-grey p1">|</span>
+            <a class="h2 text-orange" href="/vapor/">Vapor CSS</a>
+        </p>
+    </div>
+</header>
+
+<div class="flex flex-row application-wrapper">
+    <div class="flex flex-column navigation-wrapper navigation-wrapper-opened">
+        <nav class="navigation">
+    <div class="navigation-menu">
+        <ul class="navigation-menu-sections">
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 18 18"><path d="M9 0c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16.2c3.969 0 7.2-3.231 7.2-7.2S12.969 1.8 9 1.8 1.8 5.031 1.8 9s3.231 7.2 7.2 7.2zM8 6V4h2v2zm0 1h2v7H8z"></path></svg>
+                    </span>
+                    General Guidelines
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/general-guidelines/#content-numbers" class="block navigation-menu-section-item-link">
+                            Content / Numbers
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/general-guidelines/#content-ui-texts-and-error-messages" class="block navigation-menu-section-item-link">
+                            Content / UI texts and error messages
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/general-guidelines/#dialog" class="block navigation-menu-section-item-link">
+                            Dialog
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/general-guidelines/#messages-error" class="block navigation-menu-section-item-link">
+                            Messages / Error
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/general-guidelines/#messages-success" class="block navigation-menu-section-item-link">
+                            Messages / Success
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/general-guidelines/#messages-warning" class="block navigation-menu-section-item-link">
+                            Messages / Warning
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/general-guidelines/#inline-validation" class="block navigation-menu-section-item-link">
+                            Inline validation
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/general-guidelines/#hit-zones" class="block navigation-menu-section-item-link">
+                            Hit zones
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 20 20"><path d="M2.3 6h1.4a.3.3 0 0 1 .3.3v1.4a.3.3 0 0 1-.3.3H2.3a.3.3 0 0 1-.3-.3V6.3a.3.3 0 0 1 .3-.3M1.53 1a.53.53 0 0 0-.53.53v1.94c0 .293.237.53.53.53h1.94A.53.53 0 0 0 4 3.47V1.53A.53.53 0 0 0 3.47 1H1.53M14.53 1a.53.53 0 0 0-.53.53v1.94c0 .293.237.53.53.53h1.94a.53.53 0 0 0 .53-.53V1.53a.53.53 0 0 0-.53-.53h-1.94M1.53 14a.53.53 0 0 0-.53.53v1.94c0 .293.237.53.53.53h1.94a.53.53 0 0 0 .53-.53v-1.94a.53.53 0 0 0-.53-.53H1.53M2.3 10h1.4a.3.3 0 0 1 .3.3v1.4a.3.3 0 0 1-.3.3H2.3a.3.3 0 0 1-.3-.3v-1.4a.3.3 0 0 1 .3-.3M6.3 14h1.4a.3.3 0 0 1 .3.3v1.4a.3.3 0 0 1-.3.3H6.3a.3.3 0 0 1-.3-.3v-1.4a.3.3 0 0 1 .3-.3M6.3 2h1.4a.3.3 0 0 1 .3.3v1.4a.3.3 0 0 1-.3.3H6.3a.3.3 0 0 1-.3-.3V2.3a.3.3 0 0 1 .3-.3M10.3 2h1.4a.3.3 0 0 1 .3.3v1.4a.3.3 0 0 1-.3.3h-1.4a.3.3 0 0 1-.3-.3V2.3a.3.3 0 0 1 .3-.3M14.3 6h1.4a.3.3 0 0 1 .3.3v1.4a.3.3 0 0 1-.3.3h-1.4a.3.3 0 0 1-.3-.3V6.3a.3.3 0 0 1 .3-.3M10.46 10a.459.459 0 0 0-.424.64l3.893 9.08a.458.458 0 0 0 .857-.036l1.225-3.674 3.675-1.225a.46.46 0 0 0 .035-.857l-9.08-3.893a.463.463 0 0 0-.179-.037"></path></svg>
+                    </span>
+                    Buttons
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/buttons/#overview" class="block navigation-menu-section-item-link">
+                            Overview
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/buttons/#base" class="block navigation-menu-section-item-link">
+                            Base
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/buttons/#color-modifiers" class="block navigation-menu-section-item-link">
+                            Color modifiers
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/buttons/#size-modifiers" class="block navigation-menu-section-item-link">
+                            Size modifiers
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/buttons/#append-and-prepend" class="block navigation-menu-section-item-link">
+                            Append and prepend
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/buttons/#confirm" class="block navigation-menu-section-item-link">
+                            Confirm
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/buttons/#alignment" class="block navigation-menu-section-item-link">
+                            Alignment
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 20 20"><path d="M2 19V1c0-.607.399-1 1-1h14c.603 0 1 .395 1 1v18c0 .605-.399.998-1 1H3c-.603 0-1-.393-1-1m2-1V2h12v16"></path><path d="M11 15a.75.75 0 0 1 0-1.061L12.939 12 11 10.061A.75.75 0 1 1 12.061 9l3 3-3 3A.75.75 0 0 1 11 15M7.939 11l-3-3 3-3A.75.75 0 1 1 9 6.061L7.061 8 9 9.939A.75.75 0 1 1 7.939 11"></path></svg>
+                    </span>
+                    Cards
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/cards/#home" class="block navigation-menu-section-item-link">
+                            Home
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/cards/#logo" class="block navigation-menu-section-item-link">
+                            Logo
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/cards/#limit" class="block navigation-menu-section-item-link">
+                            Limit
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/cards/#material" class="block navigation-menu-section-item-link">
+                            Material
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/cards/#wizard" class="block navigation-menu-section-item-link">
+                            Wizard
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <span class="smaller bold">rgb</span>
+                    </span>
+                    Colors
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/colors/#palette" class="block navigation-menu-section-item-link">
+                            Palette
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 20 20"><path d="M9 18c-5 0-9-4-9-9s4-9 9-9 9 4 9 9-4 9-9 9zM9 2C5.1 2 2 5.1 2 9s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7z"></path><path d="M12.6 9.9c.5 0 .9-.4.9-.9s-.4-.9-.9-.9-.9.4-.9.9.4.9.9.9M9 9.9c.5 0 .9-.4.9-.9s-.4-.9-.9-.9-.9.4-.9.9.4.9.9.9m-3.6 0c.5 0 .9-.4.9-.9s-.4-.9-.9-.9-.9.4-.9.9.4.9.9.9"></path></svg>
+                    </span>
+                    Other components
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#badge" class="block navigation-menu-section-item-link">
+                            Badge
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#banner" class="block navigation-menu-section-item-link">
+                            Banner
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#blank-slate" class="block navigation-menu-section-item-link">
+                            Blank Slate
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#breadcrumbs" class="block navigation-menu-section-item-link">
+                            Breadcrumbs
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#calendar-date-picker" class="block navigation-menu-section-item-link">
+                            Calendar & Date Picker
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#collapsible" class="block navigation-menu-section-item-link">
+                            Collapsible
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#content-placeholder" class="block navigation-menu-section-item-link">
+                            Content placeholder
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#corner-ribbon" class="block navigation-menu-section-item-link">
+                            Corner ribbon
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#facet" class="block navigation-menu-section-item-link">
+                            Facet
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#card" class="block navigation-menu-section-item-link">
+                            Card
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#search-field" class="block navigation-menu-section-item-link">
+                            Search Field
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#list-box" class="block navigation-menu-section-item-link">
+                            List Box
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#loading" class="block navigation-menu-section-item-link">
+                            Loading
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#member" class="block navigation-menu-section-item-link">
+                            Member
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#modal" class="block navigation-menu-section-item-link">
+                            Modal
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#multi-step-bar" class="block navigation-menu-section-item-link">
+                            Multi step bar
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#sync-feedback" class="block navigation-menu-section-item-link">
+                            Sync Feedback
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/components/#tabs" class="block navigation-menu-section-item-link">
+                            Tabs
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 20 20"><path d="M9 1.541c4.976 0 7.101 1.333 7.459 1.712l-.032.046c-.629.649-3.201 1.677-7.427 1.677-4.24 0-6.802-1.024-7.413-1.659l-.046-.065C1.903 2.872 4.028 1.541 9 1.541M3.354 5.81c1.591.456 3.582.705 5.646.705s4.056-.249 5.646-.705l-4.484 6.329-.037.051v4.075c-.912.542-1.78.247-2.25-.004v-4.07L3.354 5.81M18 3.258C18 1.432 14.048.001 9 .001c-5.05 0-9 1.43-9 3.257 0 .167.035.337.104.506L.17 3.9c.042.071.132.222.194.297l6.02 8.496v4.158l.216.195c.106.098 1.072.955 2.47.955.882 0 1.679-.303 2.37-.905l.177-.171v-4.232l6.01-8.486c.067-.083.121-.158.157-.22l.047-.075.062-.145A1.3 1.3 0 0 0 18 3.258"></path></svg>
+                    </span>
+                    Filtering Controls
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/filters/#picker" class="block navigation-menu-section-item-link">
+                            Picker
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/filters/#pickers" class="block navigation-menu-section-item-link">
+                            Pickers
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/filters/#list-popup" class="block navigation-menu-section-item-link">
+                            List Popup
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/filters/#value-popup" class="block navigation-menu-section-item-link">
+                            Value Popup
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 512 512"><path d="M32 0v96c-17.594 0-32 14.406-32 32v32c0 17.594 14.406 32 32 32v320h64V192c17.594 0 32-14.406 32-32v-32c0-17.594-14.406-32-32-32V0H32zm192 0v320c-17.594 0-32 14.406-32 32v32c0 17.594 14.406 32 32 32v96h64v-96c17.594 0 32-14.406 32-32v-32c0-17.594-14.406-32-32-32V0h-64zm192 0v160c-17.594 0-32 14.406-32 32v32c0 17.594 14.406 32 32 32v256h64V256c17.594 0 32-14.406 32-32v-32c0-17.594-14.406-32-32-32V0h-64z"></path></svg>
+                    </span>
+                    Form controls
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#text-input" class="block navigation-menu-section-item-link">
+                            Text input
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#numeric-spinner" class="block navigation-menu-section-item-link">
+                            Numeric spinner
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#checkboxes-infos" class="block navigation-menu-section-item-link">
+                            Checkboxes / Infos
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#checkboxes" class="block navigation-menu-section-item-link">
+                            Checkboxes
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#radio-buttons" class="block navigation-menu-section-item-link">
+                            Radio buttons
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#slide-toggle" class="block navigation-menu-section-item-link">
+                            Slide toggle
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#slide-toggle-modifiers" class="block navigation-menu-section-item-link">
+                            Slide toggle modifiers
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#slide-toggle-double" class="block navigation-menu-section-item-link">
+                            Slide toggle double
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#filter-box" class="block navigation-menu-section-item-link">
+                            Filter box
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#input-slider" class="block navigation-menu-section-item-link">
+                            Input slider
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#date-picker" class="block navigation-menu-section-item-link">
+                            Date Picker
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#dropdown" class="block navigation-menu-section-item-link">
+                            Dropdown
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#dropdown-modifiers" class="block navigation-menu-section-item-link">
+                            Dropdown Modifiers
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#flat-select" class="block navigation-menu-section-item-link">
+                            Flat select
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#prepended-flat-select" class="block navigation-menu-section-item-link">
+                            Prepended flat select
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#flat-select-modifiers" class="block navigation-menu-section-item-link">
+                            Flat select modifiers
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#chosen-single-select" class="block navigation-menu-section-item-link">
+                            Chosen single select
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#chosen-multi-select" class="block navigation-menu-section-item-link">
+                            Chosen multi select
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#form-controls" class="block navigation-menu-section-item-link">
+                            Form controls
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#multiline-input" class="block navigation-menu-section-item-link">
+                            Multiline input
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#progress-bar" class="block navigation-menu-section-item-link">
+                            Progress bar
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#step-progress-bar" class="block navigation-menu-section-item-link">
+                            Step Progress bar
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#dropdown-search" class="block navigation-menu-section-item-link">
+                            Dropdown Search
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#multiselect-dropdown-search" class="block navigation-menu-section-item-link">
+                            MultiSelect Dropdown Search
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/controls/#file-input" class="block navigation-menu-section-item-link">
+                            File input
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 768 768"><path d="M432 526.875h239.5v49.5H432zM96 96h240v240H96zM432 96h240v240H432zM432 624.375h239.5v48H432zM432 431.625h239.5v49.5H432zM96 432h240v240H96z"></path></svg>
+                    </span>
+                    Form layouts
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/forms/#groups" class="block navigation-menu-section-item-link">
+                            Groups
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/forms/#child-element" class="block navigation-menu-section-item-link">
+                            Child element
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/forms/#split-layout" class="block navigation-menu-section-item-link">
+                            Split layout
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/forms/#child-section-element" class="block navigation-menu-section-item-link">
+                            Child section element
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 768 768"><path d="M96 526.875h576v49.5H96zM96 96h576v240H96zM96 624.375h576v48H96zM96 431.625h576v49.5H96z"></path></svg>
+                    </span>
+                    Headers
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/headers/#panel" class="block navigation-menu-section-item-link">
+                            Panel
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/headers/#site" class="block navigation-menu-section-item-link">
+                            Site
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 512 512"><path d="M447.75 448h.25v-.25zM38.556 233.619c-61.319-12.325-39.149 48.664-4.705 48.258-58.575 49.335 38.952 96.609 56.868-8.633 17.916-105.236-75.74-107.23-52.163-39.625zM373.06 129.039c100.526 35.917 118.753-55.967 48.08-44.487 22.786-58.25-41.123-47.008-46.707-13.015-38.413-66.251-101.906 21.583-1.373 57.502zM511.715 235.008l-383.78-192.91v427.805L474.4 297.305c-54.7-9.087-109.244 4.26-175.59 24.066-.728.216.733-21.797 0-21.576 72.309-68.299 175.692-73.046 212.905-64.787zm-234.195 3.123c-17.443 3.709-35.519-9.41-38.495-25.3-2.979-15.888 7.843-33.848 25.284-37.558 17.447-3.707 34.901 8.244 37.883 24.137 2.974 15.887-7.23 35.016-24.672 38.721z"></path></svg>
+                    </span>
+                    Icons
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/icons/#icons" class="block navigation-menu-section-item-link">
+                            Icons
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 52 52"><path d="M26 4C12.7 4 2 13.8 2 26c0 3.9 1.1 7.5 3 10.8.2.4.3.9.2 1.3L3 45c-.4 1.3.8 2.4 2.1 2l7-2.4c.5-.2 1-.1 1.4.2 3.7 2.1 8 3.3 12.6 3.3 13.3 0 24-9.8 24-22C49.8 13.8 39.1 4 26 4zm-8.55 30.85c0 .9-.7 1.6-1.6 1.6h-1.6c-.9 0-1.6-.7-1.6-1.6v-1.6c0-.9.7-1.6 1.6-1.6h1.6c.9 0 1.6.7 1.6 1.6zm0-8c0 .9-.7 1.6-1.6 1.6h-1.6c-.9 0-1.6-.7-1.6-1.6v-1.6c0-.9.7-1.6 1.6-1.6h1.6c.9 0 1.6.7 1.6 1.6zm0-8c0 .9-.7 1.6-1.6 1.6h-1.6c-.9 0-1.6-.7-1.6-1.6v-1.6c0-.9.7-1.6 1.6-1.6h1.6c.9 0 1.6.7 1.6 1.6zm22 16c0 .9-.7 1.6-1.6 1.6h-15.7c-.9 0-1.6-.7-1.6-1.6v-1.6c0-.9.7-1.6 1.6-1.6h15.7c.9 0 1.6.7 1.6 1.6zm0-8c0 .9-.7 1.6-1.6 1.6h-15.7c-.9 0-1.6-.7-1.6-1.6v-1.6c0-.9.7-1.6 1.6-1.6h15.7c.9 0 1.6.7 1.6 1.6zm0-8c0 .9-.7 1.6-1.6 1.6h-15.7c-.9 0-1.6-.7-1.6-1.6v-1.6c0-.9.7-1.6 1.6-1.6h15.7c.9 0 1.6.7 1.6 1.6z"></path></svg>
+                    </span>
+                    Messages
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/messages/#popover" class="block navigation-menu-section-item-link">
+                            Popover
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/messages/#prompt" class="block navigation-menu-section-item-link">
+                            Prompt
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/messages/#toast" class="block navigation-menu-section-item-link">
+                            Toast
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/messages/#tooltip" class="block navigation-menu-section-item-link">
+                            Tooltip
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 12 14"><path fill="currentColor" d="M12.009 2.804L9.439.229a.782.782 0 0 0-1.106 1.104L9.57 2.572H.783a.78.78 0 1 0 0 1.563h8.789L8.334 5.374a.782.782 0 0 0 1.105 1.105l2.57-2.571a.782.782 0 0 0 0-1.104zM11.714 9.865H2.931l1.237-1.239a.78.78 0 1 0-1.106-1.104l-2.57 2.574a.781.781 0 0 0 0 1.104l2.57 2.571a.782.782 0 0 0 1.105-1.105l-1.238-1.239h8.785a.783.783 0 0 0 .788-.781.787.787 0 0 0-.788-.781z"></path></svg>
+                    </span>
+                    Navigation
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/navigation/#navigation" class="block navigation-menu-section-item-link">
+                            Navigation
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/navigation/#sub-navigation" class="block navigation-menu-section-item-link">
+                            Sub Navigation
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/navigation/#navigation-loading" class="block navigation-menu-section-item-link">
+                            Navigation loading
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 512 512"><path d="M0 64h96v96H0zM160 64h352v96H160zM0 224h96v96H0zM160 224h352v96H160zM0 384h96v96H0zM160 384h352v96H160z"></path></svg>
+                    </span>
+                    Tables
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#base" class="block navigation-menu-section-item-link">
+                            Base
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#drag-and-drop" class="block navigation-menu-section-item-link">
+                            Drag and drop
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#fixed-header" class="block navigation-menu-section-item-link">
+                            Fixed header
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#actions-container" class="block navigation-menu-section-item-link">
+                            Actions container
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#small-actions-container" class="block navigation-menu-section-item-link">
+                            Small actions container
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#collapsible-rows" class="block navigation-menu-section-item-link">
+                            Collapsible rows
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#alternating-color-rows" class="block navigation-menu-section-item-link">
+                            Alternating color rows
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#pagination" class="block navigation-menu-section-item-link">
+                            Pagination
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#smaller-rows" class="block navigation-menu-section-item-link">
+                            Smaller rows
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/tables/#loading" class="block navigation-menu-section-item-link">
+                            Loading
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <span class="bold"> T|</span>
+                    </span>
+                    Typography
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/typography/#headings" class="block navigation-menu-section-item-link">
+                            Headings
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/typography/#colors" class="block navigation-menu-section-item-link">
+                            Colors
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/typography/#utilities" class="block navigation-menu-section-item-link">
+                            Utilities
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/typography/#lists" class="block navigation-menu-section-item-link">
+                            Lists
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/typography/#line-height" class="block navigation-menu-section-item-link">
+                            Line-height
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="block navigation-menu-section">
+                <header class="navigation-menu-section-header text-white">
+                    <span class="navigation-menu-section-header-icon fill-white transparency-3">
+                        <svg viewBox="0 0 528 528"><path d="M351.999 220c-15.557-.059-42.497-28.517-44-44-1.921-19.789 66.136-87.901 66.136-87.901s-33.386-.441-43.947.327C279.988 93.228 241.5 135.543 241.5 187c0 10.302.25 21.97.699 33 0 0-132.51 144.089-132.2 154 .486 15.549 28.468 44.873 44 44 9.899-.557 154.146-131.889 154.146-131.889 9.91-.096 22.595-.111 32.355-.111 50.852 0 93.887-38.496 99.499-87.847.333-8.73.147-44.324.147-44.324S371.77 220.075 351.999 220zM43.999 22l121 121.596V22z"></path><path d="M263.999 0h-2.527c-10.854 0-19.653 9.736-19.653 21.748 0 12.011 8.799 21.747 19.653 21.747l2.779.002c121.643 0 220.252 98.61 220.252 220.251S385.894 484 264.251 484c-121.642 0-220.252-98.609-220.252-220.252 0-74.459 36.957-140.274 93.521-180.137V46.443l-13.02-6.597C49.75 86.465-.001 169.416-.001 264c0 145.803 118.197 264 264 264s264-118.197 264-264-118.197-264-264-264z"></path></svg>
+                    </span>
+                    Utility
+                    <span class="collapsible-arrow icon fill-white transparency-4 open">
+                        <svg viewbox="0 0 12.6 7.2"><path d="M.945.046c.3 0 .5.1.7.3l4.6 4.6 4.6-4.6c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.2 5.2c-.4.4-1.2.4-1.6 0l-5.2-5.2c-.4-.4-.4-1 0-1.4.2-.2.4-.3.7-.3"/></svg>
+                    </span>
+                </header>
+                <ul class="navigation-menu-section-items">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/utility/#white-space" class="block navigation-menu-section-item-link">
+                            White Space
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/utility/#spaced-box" class="block navigation-menu-section-item-link">
+                            Spaced box
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/utility/#cursor" class="block navigation-menu-section-item-link">
+                            Cursor
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/utility/#color-dots" class="block navigation-menu-section-item-link">
+                            Color dots
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/utility/#borders" class="block navigation-menu-section-item-link">
+                            Borders
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/utility/#transparency" class="block navigation-menu-section-item-link">
+                            Transparency
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="navigation-menu-section-item">
+                        <a href="/vapor/utility/#hover" class="block navigation-menu-section-item-link">
+                            Hover
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+        </ul>
+    </div>
+</nav>
+
+    </div>
+
+    <div class="page-content application-container">
+        <div class="wrapper application-main-content m0">
+            
+
+
+<article class="sg-component">
+
+    <header id="groups" class="sg-component-header">
+    <h1 class="text-medium-blue">Groups</h1>
+
+    
+    <p class="sg-component-description">
+        Simple vertical form!
+    </p>
+    
+
+    
+    <p class="sg-component-stylesheet">
+        <strong>Style sheet:</strong>
+        <a href="https://github.com/coveo/styleguide/blob/master/scss/forms/block-form.scss">/scss/forms/block-form.scss</a>
+    </p>
+    
+</header>
+
+
+    <div class="sg-component-body">
+        <div class="sg-component-display " style="">
+            <div class="coveo-form">
+    <fieldset class="form-group input-field"> <!-- fieldset tag is optional, you can use a simple div -->
+        <input type="text" required/>
+        <label>Basic</label>
+    </fieldset>
+    <div class="form-group input-field">
+        <input type="text" required placeholder="Placeholder text"/>
+        <label>With placeholder</label>
+    </div>
+    <div class="form-group input-field">
+        <input type="text" required placeholder="Placeholder text" value="My value"/>
+        <label>With value</label>
+    </div>
+</div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="sg-component-source ">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group input-field"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- fieldset tag is optional, you can use a simple div --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;label&gt;</span>Basic<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group input-field"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span> <span class="na">placeholder=</span><span class="s">"Placeholder text"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;label&gt;</span>With placeholder<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group input-field"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span> <span class="na">placeholder=</span><span class="s">"Placeholder text"</span> <span class="na">value=</span><span class="s">"My value"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;label&gt;</span>With value<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+        </div>
+        <form class="codepen-form " action="http://codepen.io/pen/define" method="POST" target="_blank">
+            <div class="hidden codepen-html">
+                <!-- The wrapper is only used to center content in CodePen -->
+                <div class="wrapper mx-auto p2 bg-pure-white">
+                    <div class="coveo-form">
+    <fieldset class="form-group input-field"> <!-- fieldset tag is optional, you can use a simple div -->
+        <input type="text" required/>
+        <label>Basic</label>
+    </fieldset>
+    <div class="form-group input-field">
+        <input type="text" required placeholder="Placeholder text"/>
+        <label>With placeholder</label>
+    </div>
+    <div class="form-group input-field">
+        <input type="text" required placeholder="Placeholder text" value="My value"/>
+        <label>With value</label>
+    </div>
+</div>
+
+                </div>
+                <style type="text/css" media="tv">
+                    /* Basic styling for CodePen */
+                    .coveo-styleguide {
+                        background: #f7f7f7;
+                    }
+
+                    body {
+                        justify-content: center;
+                    }
+
+                    .wrapper {
+                        min-width: 400px;
+                        overflow: auto;
+                    }
+                </style>
+            </div>
+            <input class="codepen-input" type="hidden" name="data" value=""/>
+            <input type="submit" value="Fork in CodePen" class="btn"/>
+        </form>
+    </div>
+</article>
+
+
+
+<article class="sg-component">
+
+    <header id="child-element" class="sg-component-header">
+    <h1 class="text-medium-blue">Child element</h1>
+
+    
+    <p class="sg-component-description">
+        Displays a from element has the child of another.
+    </p>
+    
+
+    
+    <p class="sg-component-stylesheet">
+        <strong>Style sheet:</strong>
+        <a href="https://github.com/coveo/styleguide/blob/master/scss/forms/form-child.scss">/scss/forms/form-child.scss</a>
+    </p>
+    
+</header>
+
+
+    <div class="sg-component-body">
+        <div class="sg-component-display " style="">
+            <div class="coveo-parent">
+    <label class="coveo-checkbox-label">
+        <input type="checkbox" class="coveo-checkbox" checked="">
+        <button type="button"></button>
+        <span class="label">With child</span>
+    </label>
+    <div class="coveo-child">
+        <label class="coveo-checkbox-label">
+            <input type="checkbox" class="coveo-checkbox" />
+            <button type="button"></button>
+            <span class="label">Child checkbox</span>
+        </label>
+    </div>
+</div>
+
+<div class="coveo-parent mt2 p2 bg-white">
+    <label class="coveo-checkbox-label">
+        <input type="checkbox" class="coveo-checkbox" checked="">
+        <button type="button"></button>
+        <span class="label">Can have a different color?</span>
+    </label>
+    <div class="coveo-child mod-pure-white">
+        <label class="coveo-checkbox-label">
+            <input type="checkbox" class="coveo-checkbox" />
+            <button type="button"></button>
+            <span class="label">Yes</span>
+        </label>
+    </div>
+</div>
+
+<div class="coveo-form mt2 coveo-parent">
+    <label class="coveo-checkbox-label">
+        <input type="checkbox" class="coveo-checkbox" />
+        <button type="button"></button>
+        <span class="label">It works with input elements too</span>
+    </label>
+    <div class="coveo-child">
+        <div class="input-field form-group">
+            <input type="text" disabled required="" placeholder="Placeholder text" />
+            <label> Enabled invalid input
+                <span class="inline-help-tooltip" title="" data-placement="right" data-original-title="A simple inline help text.">
+                    <span class="inline-help-icon">
+                        <svg viewbox="0 0 18 18"><path d="M9 0c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16.2c3.969 0 7.2-3.231 7.2-7.2S12.969 1.8 9 1.8 1.8 5.031 1.8 9s3.231 7.2 7.2 7.2zM8 6V4h2v2zm0 1h2v7H8z"/></svg>
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+</div>
+<div class="coveo-form mt2 coveo-parent">
+    <label class="coveo-checkbox-label">
+        <input type="checkbox" class="coveo-checkbox" checked>
+        <button type="button"></button>
+        <span class="label">or radio button</span>
+    </label>
+    <div class="coveo-child">
+        <fieldset class="form-group">
+            <span class="form-control-label">A radio-select</span>
+            <div class="form-control radio-select">
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option1-child" value="blue" />
+                    <label for="Option1-child">Blue</label>
+                </div>
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option2-child" value="green" checked />
+                    <label for="Option2-child">Green</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<div class="coveo-form mt2 p2">
+    <div class="flex flex-row">
+        <fieldset class="form-group">
+            <span class="form-control-label">A radio-select</span>
+            <div class="form-control radio-select">
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option4-child" value="blue2" />
+                    <label for="Option4-child">Blue</label>
+                </div>
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option5-child" value="green2" checked />
+                    <label for="Option5-child">Green</label>
+                </div>
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option6-child" value="yellow" />
+                    <label for="Option6-child">Yellow</label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="p2">
+            <div class="coveo-child vertical">
+                <div class="form-control">
+                    <label class="coveo-checkbox-label">
+                        <input type="checkbox" class="coveo-checkbox" disabled>
+                        <button type="button"></button>
+                        <span class="label">Option 1</span>
+                    </label>
+                    <br>
+                    <label class="mt1 coveo-checkbox-label">
+                        <input type="checkbox" class="coveo-checkbox" checked disabled>
+                        <button type="button"></button>
+                        <span class="label">Option 2</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.coveo-checkbox').click(function () {
+        var isChild = $(this).closest('.coveo-child').length > 0;
+        if (!isChild) {
+            var parent = $(this).closest('.coveo-parent');
+            var isChecked = $(this).prop('checked');
+            if (parent.length) {
+                parent.find('.coveo-child input').prop('disabled', !isChecked);
+            }
+        }
+    });
+</script>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="sg-component-source ">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-parent"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"coveo-checkbox-label"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"coveo-checkbox"</span> <span class="na">checked=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>With child<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-child"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"coveo-checkbox-label"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"coveo-checkbox"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>Child checkbox<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-parent mt2 p2 bg-white"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"coveo-checkbox-label"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"coveo-checkbox"</span> <span class="na">checked=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>Can have a different color?<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-child mod-pure-white"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"coveo-checkbox-label"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"coveo-checkbox"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>Yes<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-form mt2 coveo-parent"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"coveo-checkbox-label"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"coveo-checkbox"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>It works with input elements too<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-child"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-field form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">disabled</span> <span class="na">required=</span><span class="s">""</span> <span class="na">placeholder=</span><span class="s">"Placeholder text"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label&gt;</span> Enabled invalid input
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"inline-help-tooltip"</span> <span class="na">title=</span><span class="s">""</span> <span class="na">data-placement=</span><span class="s">"right"</span> <span class="na">data-original-title=</span><span class="s">"A simple inline help text."</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"inline-help-icon"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;svg</span> <span class="na">viewbox=</span><span class="s">"0 0 18 18"</span><span class="nt">&gt;&lt;path</span> <span class="na">d=</span><span class="s">"M9 0c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16.2c3.969 0 7.2-3.231 7.2-7.2S12.969 1.8 9 1.8 1.8 5.031 1.8 9s3.231 7.2 7.2 7.2zM8 6V4h2v2zm0 1h2v7H8z"</span><span class="nt">/&gt;&lt;/svg&gt;</span>
+                    <span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-form mt2 coveo-parent"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"coveo-checkbox-label"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"coveo-checkbox"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>or radio button<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-child"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"form-control-label"</span><span class="nt">&gt;</span>A radio-select<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control radio-select"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio-option"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"enabledOptions"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"Option1-child"</span> <span class="na">value=</span><span class="s">"blue"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"Option1-child"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio-option"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"enabledOptions"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"Option2-child"</span> <span class="na">value=</span><span class="s">"green"</span> <span class="na">checked</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"Option2-child"</span><span class="nt">&gt;</span>Green<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-form mt2 p2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex flex-row"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"form-control-label"</span><span class="nt">&gt;</span>A radio-select<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control radio-select"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio-option"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"enabledOptions"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"Option4-child"</span> <span class="na">value=</span><span class="s">"blue2"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"Option4-child"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio-option"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"enabledOptions"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"Option5-child"</span> <span class="na">value=</span><span class="s">"green2"</span> <span class="na">checked</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"Option5-child"</span><span class="nt">&gt;</span>Green<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio-option"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"enabledOptions"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"Option6-child"</span> <span class="na">value=</span><span class="s">"yellow"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"Option6-child"</span><span class="nt">&gt;</span>Yellow<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p2"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-child vertical"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"coveo-checkbox-label"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"coveo-checkbox"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/label&gt;</span>
+                    <span class="nt">&lt;br&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"mt1 coveo-checkbox-label"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"coveo-checkbox"</span> <span class="na">checked</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.coveo-checkbox'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">isChild</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s1">'.coveo-child'</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isChild</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">parent</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s1">'.coveo-parent'</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">isChecked</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s1">'checked'</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">parent</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">parent</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.coveo-child input'</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">,</span> <span class="o">!</span><span class="nx">isChecked</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+        </div>
+        <form class="codepen-form " action="http://codepen.io/pen/define" method="POST" target="_blank">
+            <div class="hidden codepen-html">
+                <!-- The wrapper is only used to center content in CodePen -->
+                <div class="wrapper mx-auto p2 bg-pure-white">
+                    <div class="coveo-parent">
+    <label class="coveo-checkbox-label">
+        <input type="checkbox" class="coveo-checkbox" checked="">
+        <button type="button"></button>
+        <span class="label">With child</span>
+    </label>
+    <div class="coveo-child">
+        <label class="coveo-checkbox-label">
+            <input type="checkbox" class="coveo-checkbox" />
+            <button type="button"></button>
+            <span class="label">Child checkbox</span>
+        </label>
+    </div>
+</div>
+
+<div class="coveo-parent mt2 p2 bg-white">
+    <label class="coveo-checkbox-label">
+        <input type="checkbox" class="coveo-checkbox" checked="">
+        <button type="button"></button>
+        <span class="label">Can have a different color?</span>
+    </label>
+    <div class="coveo-child mod-pure-white">
+        <label class="coveo-checkbox-label">
+            <input type="checkbox" class="coveo-checkbox" />
+            <button type="button"></button>
+            <span class="label">Yes</span>
+        </label>
+    </div>
+</div>
+
+<div class="coveo-form mt2 coveo-parent">
+    <label class="coveo-checkbox-label">
+        <input type="checkbox" class="coveo-checkbox" />
+        <button type="button"></button>
+        <span class="label">It works with input elements too</span>
+    </label>
+    <div class="coveo-child">
+        <div class="input-field form-group">
+            <input type="text" disabled required="" placeholder="Placeholder text" />
+            <label> Enabled invalid input
+                <span class="inline-help-tooltip" title="" data-placement="right" data-original-title="A simple inline help text.">
+                    <span class="inline-help-icon">
+                        <svg viewbox="0 0 18 18"><path d="M9 0c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16.2c3.969 0 7.2-3.231 7.2-7.2S12.969 1.8 9 1.8 1.8 5.031 1.8 9s3.231 7.2 7.2 7.2zM8 6V4h2v2zm0 1h2v7H8z"/></svg>
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+</div>
+<div class="coveo-form mt2 coveo-parent">
+    <label class="coveo-checkbox-label">
+        <input type="checkbox" class="coveo-checkbox" checked>
+        <button type="button"></button>
+        <span class="label">or radio button</span>
+    </label>
+    <div class="coveo-child">
+        <fieldset class="form-group">
+            <span class="form-control-label">A radio-select</span>
+            <div class="form-control radio-select">
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option1-child" value="blue" />
+                    <label for="Option1-child">Blue</label>
+                </div>
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option2-child" value="green" checked />
+                    <label for="Option2-child">Green</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<div class="coveo-form mt2 p2">
+    <div class="flex flex-row">
+        <fieldset class="form-group">
+            <span class="form-control-label">A radio-select</span>
+            <div class="form-control radio-select">
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option4-child" value="blue2" />
+                    <label for="Option4-child">Blue</label>
+                </div>
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option5-child" value="green2" checked />
+                    <label for="Option5-child">Green</label>
+                </div>
+                <div class="radio-option">
+                    <input name="enabledOptions" type="radio" id="Option6-child" value="yellow" />
+                    <label for="Option6-child">Yellow</label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="p2">
+            <div class="coveo-child vertical">
+                <div class="form-control">
+                    <label class="coveo-checkbox-label">
+                        <input type="checkbox" class="coveo-checkbox" disabled>
+                        <button type="button"></button>
+                        <span class="label">Option 1</span>
+                    </label>
+                    <br>
+                    <label class="mt1 coveo-checkbox-label">
+                        <input type="checkbox" class="coveo-checkbox" checked disabled>
+                        <button type="button"></button>
+                        <span class="label">Option 2</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.coveo-checkbox').click(function () {
+        var isChild = $(this).closest('.coveo-child').length > 0;
+        if (!isChild) {
+            var parent = $(this).closest('.coveo-parent');
+            var isChecked = $(this).prop('checked');
+            if (parent.length) {
+                parent.find('.coveo-child input').prop('disabled', !isChecked);
+            }
+        }
+    });
+</script>
+
+                </div>
+                <style type="text/css" media="tv">
+                    /* Basic styling for CodePen */
+                    .coveo-styleguide {
+                        background: #f7f7f7;
+                    }
+
+                    body {
+                        justify-content: center;
+                    }
+
+                    .wrapper {
+                        min-width: 400px;
+                        overflow: auto;
+                    }
+                </style>
+            </div>
+            <input class="codepen-input" type="hidden" name="data" value=""/>
+            <input type="submit" value="Fork in CodePen" class="btn"/>
+        </form>
+    </div>
+</article>
+
+
+
+<article class="sg-component">
+
+    <header id="split-layout" class="sg-component-header">
+    <h1 class="text-medium-blue">Split layout</h1>
+
+    
+    <p class="sg-component-description">
+        Simple flex column layout, principally used in our forms.
+    </p>
+    
+
+    
+    <p class="sg-component-stylesheet">
+        <strong>Style sheet:</strong>
+        <a href="https://github.com/coveo/styleguide/blob/master/scss/utility/layout.scss">/scss/utility/layout.scss</a>
+    </p>
+    
+</header>
+
+
+    <div class="sg-component-body">
+        <div class="sg-component-display " style="">
+            <div class="flex flex-column overflow-auto mod-border" style="height: 280px;">
+    <div class="split-layout">
+        <div class="column">
+            <p class="p1" style="line-height: 24px;">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+                reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+                nulla pariatur?
+            </p>
+        </div>
+        <div class="column">
+            <ul class="collapsible" data-collapsible="expandable">
+                <li>
+                    <button type="button" class="collapsible-header active btn with-icon">
+                        Text example
+                    </button>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" class="collapsible-header btn with-icon">
+                        Inputs
+                    </button>
+                    <div class="collapsible-body">
+                        <div class="coveo-form">
+                            <fieldset class="form-group input-field mod-fixed-width">
+                                <input type="text" required/>
+                                <label>Input 1</label>
+                            </fieldset>
+                            <fieldset class="form-group input-field mod-fixed-width">
+                                <input type="text" required/>
+                                <label>Input 2</label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="sg-component-source ">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex flex-column overflow-auto mod-border"</span> <span class="na">style=</span><span class="s">"height: 280px;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"split-layout"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"line-height: 24px;"</span><span class="nt">&gt;</span>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+                reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+                nulla pariatur?
+            <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"collapsible"</span> <span class="na">data-collapsible=</span><span class="s">"expandable"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"collapsible-header active btn with-icon"</span><span class="nt">&gt;</span>
+                        Text example
+                    <span class="nt">&lt;/button&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapsible-body"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/p&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"collapsible-header btn with-icon"</span><span class="nt">&gt;</span>
+                        Inputs
+                    <span class="nt">&lt;/button&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapsible-body"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-form"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group input-field mod-fixed-width"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;label&gt;</span>Input 1<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/fieldset&gt;</span>
+                            <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group input-field mod-fixed-width"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;label&gt;</span>Input 2<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/fieldset&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+        </div>
+        <form class="codepen-form " action="http://codepen.io/pen/define" method="POST" target="_blank">
+            <div class="hidden codepen-html">
+                <!-- The wrapper is only used to center content in CodePen -->
+                <div class="wrapper mx-auto p2 bg-pure-white">
+                    <div class="flex flex-column overflow-auto mod-border" style="height: 280px;">
+    <div class="split-layout">
+        <div class="column">
+            <p class="p1" style="line-height: 24px;">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+                reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+                nulla pariatur?
+            </p>
+        </div>
+        <div class="column">
+            <ul class="collapsible" data-collapsible="expandable">
+                <li>
+                    <button type="button" class="collapsible-header active btn with-icon">
+                        Text example
+                    </button>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" class="collapsible-header btn with-icon">
+                        Inputs
+                    </button>
+                    <div class="collapsible-body">
+                        <div class="coveo-form">
+                            <fieldset class="form-group input-field mod-fixed-width">
+                                <input type="text" required/>
+                                <label>Input 1</label>
+                            </fieldset>
+                            <fieldset class="form-group input-field mod-fixed-width">
+                                <input type="text" required/>
+                                <label>Input 2</label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <style type="text/css" media="tv">
+                    /* Basic styling for CodePen */
+                    .coveo-styleguide {
+                        background: #f7f7f7;
+                    }
+
+                    body {
+                        justify-content: center;
+                    }
+
+                    .wrapper {
+                        min-width: 400px;
+                        overflow: auto;
+                    }
+                </style>
+            </div>
+            <input class="codepen-input" type="hidden" name="data" value=""/>
+            <input type="submit" value="Fork in CodePen" class="btn"/>
+        </form>
+    </div>
+</article>
+
+
+
+<article class="sg-component">
+
+    <header id="child-section-element" class="sg-component-header">
+    <h1 class="text-medium-blue">Child section element</h1>
+
+    
+    <p class="sg-component-description">
+        Displays a from section has the child of another.
+    </p>
+    
+
+    
+    <p class="sg-component-stylesheet">
+        <strong>Style sheet:</strong>
+        <a href="https://github.com/coveo/styleguide/blob/master/scss/forms/form-child.scss">/scss/forms/form-child.scss</a>
+    </p>
+    
+</header>
+
+
+    <div class="sg-component-body">
+        <div class="sg-component-display " style="">
+            <div class="coveo-form">
+    <div class="form-group">
+        <div class="form-control">
+            <div class="btn dropdown-toggle">
+                <span class="dropdown-selected-value">Default Option</span>
+                <span class="dropdown-toggle-arrow"></span>
+            </div>
+        </div>
+        <div class="child-section">
+            <div class="form-control form-group">
+                <div class="btn dropdown-toggle">
+                    <span class="dropdown-selected-value">Default Option</span>
+                    <span class="dropdown-toggle-arrow"></span>
+                </div>
+            </div>
+            <div class="input-field form-group">
+                <input type="text" required/>
+                <label>Input 1</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-control">
+            <div class="btn dropdown-toggle">
+                <span class="dropdown-selected-value">Default Option</span>
+                <span class="dropdown-toggle-arrow"></span>
+            </div>
+        </div>
+        <div class="child-section mod-child-section-first-input">
+            <div class="input-field form-group">
+                <input type="text" required/>
+                <label>Input 1</label>
+            </div>
+            <div class="input-field form-group">
+                <input type="text" required/>
+                <label>Input 2</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="sg-component-source ">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"coveo-form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn dropdown-toggle"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dropdown-selected-value"</span><span class="nt">&gt;</span>Default Option<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dropdown-toggle-arrow"</span><span class="nt">&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"child-section"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control form-group"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn dropdown-toggle"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dropdown-selected-value"</span><span class="nt">&gt;</span>Default Option<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dropdown-toggle-arrow"</span><span class="nt">&gt;&lt;/span&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-field form-group"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;label&gt;</span>Input 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn dropdown-toggle"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dropdown-selected-value"</span><span class="nt">&gt;</span>Default Option<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dropdown-toggle-arrow"</span><span class="nt">&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"child-section mod-child-section-first-input"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-field form-group"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;label&gt;</span>Input 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-field form-group"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;label&gt;</span>Input 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+        </div>
+        <form class="codepen-form " action="http://codepen.io/pen/define" method="POST" target="_blank">
+            <div class="hidden codepen-html">
+                <!-- The wrapper is only used to center content in CodePen -->
+                <div class="wrapper mx-auto p2 bg-pure-white">
+                    <div class="coveo-form">
+    <div class="form-group">
+        <div class="form-control">
+            <div class="btn dropdown-toggle">
+                <span class="dropdown-selected-value">Default Option</span>
+                <span class="dropdown-toggle-arrow"></span>
+            </div>
+        </div>
+        <div class="child-section">
+            <div class="form-control form-group">
+                <div class="btn dropdown-toggle">
+                    <span class="dropdown-selected-value">Default Option</span>
+                    <span class="dropdown-toggle-arrow"></span>
+                </div>
+            </div>
+            <div class="input-field form-group">
+                <input type="text" required/>
+                <label>Input 1</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-control">
+            <div class="btn dropdown-toggle">
+                <span class="dropdown-selected-value">Default Option</span>
+                <span class="dropdown-toggle-arrow"></span>
+            </div>
+        </div>
+        <div class="child-section mod-child-section-first-input">
+            <div class="input-field form-group">
+                <input type="text" required/>
+                <label>Input 1</label>
+            </div>
+            <div class="input-field form-group">
+                <input type="text" required/>
+                <label>Input 2</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <style type="text/css" media="tv">
+                    /* Basic styling for CodePen */
+                    .coveo-styleguide {
+                        background: #f7f7f7;
+                    }
+
+                    body {
+                        justify-content: center;
+                    }
+
+                    .wrapper {
+                        min-width: 400px;
+                        overflow: auto;
+                    }
+                </style>
+            </div>
+            <input class="codepen-input" type="hidden" name="data" value=""/>
+            <input type="submit" value="Fork in CodePen" class="btn"/>
+        </form>
+    </div>
+</article>
+
+
+
+        </div>
+
+        <footer class="site-footer">
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Vapor CSS</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col  footer-col-1">
+                <ul class="contact-list">
+                    <li>Vapor CSS</li>
+                    <li><a href="mailto:styleguide@coveo.com">styleguide@coveo.com</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col  footer-col-2">
+                <ul class="social-media-list">
+                    
+                    <li>
+                        <a href="https://github.com/Coveo">
+                            <span class="icon  icon--github">
+                                <svg viewBox="0 0 16 16">
+                                    <path fill="#828282"
+                                          d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                                </svg>
+                            </span>
+                            <span class="username">Coveo</span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/coveo">
+                            <span class="icon  icon--twitter">
+                                <svg viewBox="0 0 16 16">
+                                    <path fill="#828282"
+                                          d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                                </svg>
+                            </span>
+                            <span class="username">coveo</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-col  footer-col-3">
+                <p class="text">Vapor CSS is a collection of UI components used in Coveo's Administration Console. It is widely inspired by Bootstrap 3.0 and borrows some of its components. The project is at its early stages, some components can still have lots of breaking changes.</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+    </div>
+</div>
+
+</body>
+
+</html>
